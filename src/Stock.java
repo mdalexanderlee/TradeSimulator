@@ -34,8 +34,10 @@ public class Stock {
 	}
 	
 	public void refresh() {
-		if(currentHoldTime == maxHoldTime)
+		if(currentHoldTime == maxHoldTime) {
+			currentHoldTime = 0;
 			updateVola();
+		}
 		double rnd, change_percent, change_amount;
 		rnd = gen.nextDouble(); 
 		change_percent = 2 * volatility * rnd;
